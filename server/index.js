@@ -5,10 +5,10 @@ const path = require('path')
 
 const app = express()
 app.use(bodyParser.json())
-app.use(express.static(`${__dirname}/../react-client/dist`))
+app.use(express.static(`${__dirname}/../bridges-to-recovery/dist`))
 
 app.get('*', (req, res) => {
-    req.sendFile(path.resolve(`${__dirname}/../react-client/dist/index.html`));
+    req.sendFile(path.resolve(`${__dirname}/../bridges-to-recovery/dist/index.html`));
 })
 
 app.listen(PORT, () => {
